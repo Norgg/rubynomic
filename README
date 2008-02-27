@@ -1,0 +1,31 @@
+This is a nomic, written in camping.
+
+runnomic is an altered version of the camping server using mongrel only,
+requiring everything necessary and then chrooting and setuiding to hopefully
+stop people messing with your system too much.
+
+To run:
+Install camping.
+Make sure you have diff and patch in your path.
+Run camping nomic.rb
+
+To run semi-securely:
+Set up a chroot environment in which diff and patch can be run.
+
+ldd /usr/bin/diff
+ldd /usr/bin/patch
+
+mkdir lib
+mkdir bin
+copy diff and patch into bin
+copy the libs required for them into lib
+make sure permissions are right
+
+edit runnomic to change to the right uid for the user you want to run as
+
+sudo ruby runnomic -d nomic.db nomic.rb
+
+poke some stuff 'til it works, probably involving copying more libs or just
+giving up and copying the whole of /lib.
+
+
