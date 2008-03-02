@@ -18,6 +18,11 @@ require 'mongrel'
 require 'mongrel/camping'
 require 'digest/md5'
 require 'open3'
+require 'coderay'
+require 'coderay/scanners/ruby'
+#require 'coderay/scanners/ruby/patterns'
+require 'coderay/encoders/html'
+require 'coderay/styles/cycnus'
 
 UID = 1003
 Dir.chroot '.'
